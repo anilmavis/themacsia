@@ -26,32 +26,31 @@
  '(menu-bar-mode nil)
  '(tool-bar-mode nil))
 
-(let ((highlight-background "#264f78")
-      (region-background "#264f78")
-      (string-foreground "#ce9178")
-      (link-foreground "#3794ff")
-      (mode-line-background "#007acc")
+(let ((highlight-background          "#264f78")
+      (region-background             "#264f78")
+      (string-foreground             "#ce9178")
+      (link-foreground               "#3794ff")
+      (mode-line-background          "#007acc")
       (mode-line-inactive-background "#37373d")
-      (default-background "#1e1e1e")
-      (default-foreground "#d4d4d4"))
+      (default-background            "#1e1e1e")
+      (default-foreground            "#d4d4d4"))
 
   (custom-theme-set-faces
    'themacsia
-   '(highlight ((t (:background highlight-background))))
-   '(region ((t (:background region-background))))
-   '(font-lock-string-face ((t (:foreground string-foreground))))
+   `(highlight ((t (:background, highlight-background))))
+   `(region ((t (:background, region-background))))
+   `(font-lock-string-face ((t (:foreground, string-foreground))))
    '(button ((t (:inherit link :box nil))))
-   '(link ((t (:foreground link-foreground))))
-   '(mode-line ((t (:background mode-line-background :box nil))))
+   `(link ((t (:foreground, link-foreground))))
+   `(mode-line ((t (:background, mode-line-background :box nil))))
    '(mode-line-highlight ((t (:box nil))))
-   '(mode-line-inactive ((t (:inherit mode-line :background mode-line-inactive-background))))
-   '(default ((t (:background default-background :foreground default-foreground))))))
+   `(mode-line-inactive ((t (:inherit mode-line :background, mode-line-inactive-background))))
+   `(default ((t (:background, default-background :foreground, default-foreground))))))
 
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path) load-file-name)
-  (add-to-list 'custom-theme-load-path
-	       (file-name-as-directory (file-name-directory load-file-name))))
-  
+  (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name))))
+
 (provide-theme 'themacsia)
 
 ;; -*-no-byte-compile: t; -*-
