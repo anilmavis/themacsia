@@ -1,5 +1,5 @@
 # themacsia
-a dark emacs theme inspired by theia
+it is a dark emacs theme inspired by theia and pronounced as the ipa symbols /θiː'mæk.siə/
 
 ## requirements
 ```sh
